@@ -7,7 +7,7 @@ router = APIRouter()
 def hello_world() -> dict:
     return {
         'Name': 'Violetta',
-        ' Last_name': 'Yukhnenko',
+        'Last_name': 'Yukhnenko',
         'Age': 18,
-        'Group _code': 'IM-31'
+        'Group_code': 'IM-31'
     }
