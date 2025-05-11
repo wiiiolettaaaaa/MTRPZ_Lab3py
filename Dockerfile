@@ -1,9 +1,10 @@
-FROM python:3.10-slim
+FROM python:3.10-alpine
 
 WORKDIR /app
 
-COPY . .
+COPY requirements/backend.in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install --no-cache-dir -r requirements/backend.in
+COPY . .
 
 CMD ["python", "spaceship/main.py"]
