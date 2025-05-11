@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+import numpy as np
 
 router = APIRouter()
 
@@ -13,4 +14,15 @@ def hello_world() -> dict:
         'Year': 2,
         'Form of study': 'Full-time',
         'Email': 'yukhnenko.violetta@1ll.kpi.ua'
+    }
+
+@router.get("/matrix")
+def matrix_multiply():
+    a = np.random.rand(10, 10).tolist()
+    b = np.random.rand(10, 10).tolist()
+    product = (np.dot(a, b)).tolist()
+    return {
+        "matrix_a": a,
+        "matrix_b": b,
+        "product": product
     }
